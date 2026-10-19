@@ -1,5 +1,7 @@
 # Shift Scheduling Optimiser
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/j-hurme/shift-scheduling-optimiser/blob/main/shift_optimiser.ipynb)
+
 A Python tool that builds a shift schedule for a part-time team from the employees' own availability requests. The planning period can be any number of whole weeks; a four-week period has roughly 90 shift places to fit to about ten people's requests.
 
 The problem is formulated as an **integer program** and solved with Google OR-Tools' **CP-SAT** solver. The tool runs in Google Colab: the planner uploads an Excel file and downloads a finished schedule.
@@ -53,7 +55,7 @@ The notebook also lists 8 availability entries it could not interpret (e.g. "eve
 1. Fill in the input Excel:
    - **First sheet** (calendar): one row per day; mark public holidays with `x`, optionally set the number of `X` shifts per day.
    - **One sheet per employee**, with a `Vuorotoive` (availability) cell for every day: `Kaikki käy` (all shifts), `Vapaatoive` (day off), or shift codes such as `I2 ja I3 käy`.
-2. Open `shift_optimiser.ipynb` in Google Colab and upload the Excel file to the session.
+2. Open the notebook with the **Open in Colab** button above and upload the Excel file to the session (*Files > Upload to session storage*). To try it with the example data, download `example_input.xlsx` from this repository and upload that.
 3. Check that `INPUT_FILE` matches the file name and click **Run all**.
 4. Download `vuorot_ratkaisu.xlsx`: one row per employee, one column per day, and the unfilled shifts listed in red below the schedule.
 
